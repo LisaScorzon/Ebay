@@ -41,6 +41,12 @@ class ProductForm extends PureComponent {
 						this.state.description || initialValues.description || ''
 					} onChange={ this.handleChange } />
 				</div>
+                <div>
+					<label htmlFor="image">image of product(URL)</label>
+					<input name="image" id="image" value={
+						this.state.image || initialValues.image || ''
+					} onChange={ this.handleChange } />
+				</div>
 
                 <div>
 					<label htmlFor="email">Seller's email</label>
@@ -56,7 +62,7 @@ class ProductForm extends PureComponent {
 				</div>
 
 
-				<button type="submit">Save</button>
+				<button onSubmit={this.onSubmit} type="submit">Upload your new product!</button>
 			</form>
 		)
 	}

@@ -48,7 +48,7 @@ class Products extends PureComponent {
           </tbody>
 				</table>
 
-          <h1>Create a new product</h1> &&
+          <h1>Create a new product</h1> 
 
           <ProductForm onSubmit={this.createProduct} />
         

@@ -32,12 +32,12 @@ class ProductDetails extends PureComponent {
     return (
       <div>
         {
-          this.state.edit &&
+          this.state &&
           <ProductForm initialValues={product} onSubmit={this.updateProduct} />
         }
 
         {
-          !this.state.edit &&
+          !this.state &&
           <div>
             <button onClick={ this.toggleEdit }>edit</button>
             <h1>{ product.name }</h1>

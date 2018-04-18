@@ -8,6 +8,16 @@ export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 
+
+export const createProduct = (product) => (dispatch) => {
+    request
+      .post(`${baseUrl}/products`)
+      .send(product)
+      .then(response => dispatch({
+        type: ADD_PRODUCT,
+        payload: response.body
+      }))
+  }
 export const deleteProduct = (productId) => (dispatch) => {
   request
     .delete(`${baseUrl}/products/${productId}`)
@@ -38,15 +48,7 @@ export const fetchAllProducts = () => (dispatch) => {
     .catch(err => alert(err))
 }
 
-export const createProduct = (product) => (dispatch) => {
-  request
-    .post(`${baseUrl}/products`)
-    .send(product)
-    .then(response => dispatch({
-      type: ADD_PRODUCT,
-      payload: response.body
-    }))
-}
+
 
 export const updateProduct = (productId, updates) => (dispatch) => {
   request
