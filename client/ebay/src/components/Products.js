@@ -34,6 +34,7 @@ class Products extends PureComponent {
               <th>#</th>
               <th>Name</th>
               <th>Price</th>
+              <th>Image</th>
             </tr>
           </thead>
           <tbody>
@@ -43,6 +44,7 @@ class Products extends PureComponent {
               <Link to={ `/products/${product.id}` }>{product.name}</Link>
               </td>
               <td>&euro; {product.price}.00</td>
+              <td>{product.image}> </td>
               
             </tr>)) }
           </tbody>
