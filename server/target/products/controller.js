@@ -28,9 +28,8 @@ let ProductController = class ProductController {
             throw new routing_controllers_1.NotFoundError('Cannot find product');
         return entity_1.default.merge(product, update).save();
     }
-    createProduct(Product) {
-        const entity = Product.create();
-        return entity.save();
+    createProduct(product) {
+        return product.save();
     }
 };
 __decorate([
@@ -58,7 +57,7 @@ __decorate([
     routing_controllers_1.Post('/products'),
     __param(0, routing_controllers_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [entity_1.default]),
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "createProduct", null);
 ProductController = __decorate([

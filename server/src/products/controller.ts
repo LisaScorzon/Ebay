@@ -30,12 +30,11 @@ async updateProduct(
   return Product.merge(product, update).save()
 }
 @Post('/products')
+//@HttpCode(201)
  createProduct(
-  @Body()  Product
+  @Body() product: Product
 ) {
 
-  const entity = Product.create() //make row in DB, exclude password
-
-  return entity.save()
+  return product.save()
 }
 }
