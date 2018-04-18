@@ -2,7 +2,6 @@ import { createConnection } from 'typeorm'
 import { DefaultNamingStrategy } from 'typeorm/naming-strategy/DefaultNamingStrategy'
 import { NamingStrategyInterface } from 'typeorm/naming-strategy/NamingStrategyInterface'
 import { snakeCase } from 'typeorm/util/StringUtils'
-import   Page  from './pages/entity'
 import   Product from './products/entity'
 
 
@@ -31,7 +30,6 @@ createConnection({
     type: "postgres",
     url: process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/postgres',
     entities: [
-      Page,
       Product
     ],
     synchronize: true, // automatically synchronizes new tables with postico-should not be used in production!

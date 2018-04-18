@@ -3,8 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const DefaultNamingStrategy_1 = require("typeorm/naming-strategy/DefaultNamingStrategy");
 const StringUtils_1 = require("typeorm/util/StringUtils");
-const entity_1 = require("./pages/entity");
-const entity_2 = require("./products/entity");
+const entity_1 = require("./products/entity");
 class CustomNamingStrategy extends DefaultNamingStrategy_1.DefaultNamingStrategy {
     tableName(targetName, productSpecifiedName) {
         return productSpecifiedName ? productSpecifiedName : StringUtils_1.snakeCase(targetName) + 's';
@@ -23,8 +22,7 @@ exports.default = () => typeorm_1.createConnection({
     type: "postgres",
     url: process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/postgres',
     entities: [
-        entity_1.default,
-        entity_2.default
+        entity_1.default
     ],
     synchronize: true,
     logging: true,

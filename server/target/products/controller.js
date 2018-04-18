@@ -55,6 +55,7 @@ __decorate([
 ], ProductController.prototype, "updateProduct", null);
 __decorate([
     routing_controllers_1.Post('/products'),
+    routing_controllers_1.HttpCode(201),
     __param(0, routing_controllers_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [entity_1.default]),

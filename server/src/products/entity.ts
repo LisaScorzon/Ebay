@@ -38,7 +38,7 @@ export default class Product extends BaseEntity {
   @Column('text')
   phone: string
 
-
+}
 //   async setPassword(rawPassword: string) {
 //     const hash = await bcrypt.hash(rawPassword, 10)
 //     this.password = hash
@@ -48,4 +48,3 @@ export default class Product extends BaseEntity {
 //     return bcrypt.compare(rawPassword, this.password)
 //   }
   
-}
